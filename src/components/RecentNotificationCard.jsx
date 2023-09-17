@@ -16,6 +16,7 @@ function NotificationIcon() {
 }
 
 export default function RecentNotificationCard(props) {
+  const { title, subtitle, time } = props;
   return (
     <div aria-label="" className="flex w-[695px] items-center gap-[23px]">
       <div className="relative inline">
@@ -38,20 +39,20 @@ export default function RecentNotificationCard(props) {
             aria-label="notification-title"
             className="text-gray-800 text-base font-[590] "
           >
-            {props.title}
+            {title}
           </span>
           <span
             aria-label="notification-subtitle"
             className=" text-gray-400 text-xs font-weight510"
           >
-            {props.subtitle}
+            {subtitle}
           </span>
         </div>
         <span
           aria-label="notification-time"
           className=" text-gray-500 text-xs font-weight510 "
         >
-          {props.time}
+          {time}
         </span>
       </div>
     </div>

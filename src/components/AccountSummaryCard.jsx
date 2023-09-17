@@ -13,16 +13,19 @@ export default function AccountSummaryCard(props) {
         />
       </div>
       <div className="relative w-full justify-between flex content-start flex-row">
-        <div alt="bank-card-no" className="flex flex-col items-start gap-1 ">
-          <span alt="bank-number" className="text-[#151C2A] text-base">
+        <div
+          aria-label="bank-card-no"
+          className="flex flex-col items-start gap-1 "
+        >
+          <span aria-label="bank-number" className="text-[#151C2A] text-base">
             {bankName}
           </span>
-          <span alt="card-number" className="text-[#151C2A] text-sm">
+          <span aria-label="card-number" className="text-[#151C2A] text-sm">
             {cardName}
           </span>
         </div>
         <div
-          alt="bank-amount"
+          aria-label="bank-amount"
           className="text-[#151C2A] text-xl absolute top-1 right-[5px]"
         >
           {amount}
