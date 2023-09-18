@@ -38,8 +38,7 @@ const PaymentHistoryDropDown = () => {
         <button type="button" className="" onClick={toggleDropdown}>
           <div className="flex items-center py-3 gap-2">
             <span className="text-gray-400 text-sm font-weight510">
-              {" "}
-              {selectedOption}{" "}
+              {selectedOption}
             </span>
 
             <DropDownSvg />
@@ -49,36 +48,19 @@ const PaymentHistoryDropDown = () => {
 
       {showDropdown && (
         <div className="flex flex-col items-center py-1.5 rounded bg-grey-100 border border-solid border-gray-200 ">
-          <button
-            className={`flex w-[102px] py-3 px-0 justify-center items-center rounded ${
-              options[0] === selectedOption ? "bg-gray-200" : ""
-            }`}
-            onClick={() => handleOptionSelect(options[0])}
-          >
-            <span className="text-xs text-gray-800 font-normal">
-              {options[0]}
-            </span>
-          </button>
-          <button
-            className={`flex w-[102px] py-3 px-0 justify-center items-center rounded ${
-              options[1] === selectedOption ? "bg-gray-200" : ""
-            }`}
-            onClick={() => handleOptionSelect(options[1])}
-          >
-            <span className="text-xs text-gray-800 font-normal">
-              {options[1]}
-            </span>
-          </button>
-          <button
-            className={`flex w-[102px] py-3 px-0 justify-center items-center rounded ${
-              options[2] === selectedOption ? "bg-gray-200" : ""
-            }`}
-            onClick={() => handleOptionSelect(options[2])}
-          >
-            <span className="text-xs text-gray-800 font-normal ">
-              {options[2]}
-            </span>
-          </button>
+          {options.map((option, index) => (
+            <button
+              key={index}
+              className={`flex w-[102px] py-3 px-0 justify-center items-center rounded ${
+                option === selectedOption ? "bg-gray-200" : ""
+              }`}
+              onClick={() => handleOptionSelect(option)}
+            >
+              <span className="text-xs text-gray-800 font-normal">
+                {option}
+              </span>
+            </button>
+          ))}
         </div>
       )}
     </div>
